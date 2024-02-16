@@ -35,7 +35,7 @@ INSERT INTO persona VALUES (22, '41491230N', 'Antonio', 'Domínguez', 'Guerrero'
 INSERT INTO persona VALUES (23, '64753215G', 'Irene', 'Hernández', 'Martínez', 'Almería', 'C/ Zapillo', '628452384', '1996/03/12',  'alumno');
 INSERT INTO persona VALUES (24, '85135690V', 'Sonia', 'Gea', 'Ruiz', 'Almería', 'C/ Mercurio', '678812017', '1995/04/13', 'alumno');
 
-/* Profesor */
+/* Profesor.java */
 INSERT INTO profesor VALUES (3, 1);
 INSERT INTO profesor VALUES (5, 2);
 INSERT INTO profesor VALUES (8, 3);

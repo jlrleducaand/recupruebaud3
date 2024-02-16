@@ -1,0 +1,110 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{tit.crear.persona}">Crear Película</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+
+</head>
+<body>
+<!-- utilizando grid bootstrap tipo: stacked to horizontal -->
+<form th:action="@{/personas/crear}" th:object="${persona}" method="post">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12"><span class="h1" th:text="#{crearPersona}"></span></div>
+	</div>
+	<div class="row">
+		<div class="col-md-12"><hr/></div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="nif" th:text="#{persona.nif}"></label></div>
+		<div class="col-md-6">
+			<input type="text" id="nif" name="nif" th:value="${persona.nif}"/>
+			<p th:if="${#fields.hasErrors('nif')}" class="error">
+				<span th:if="${#fields.hasErrors('nif', 'notEmpty')}" th:text="#{persona.nif.notEmpty}"></span>
+				<span th:if="${#fields.hasErrors('nif', 'size')}" th:text="#{persona.nif.size}"></span>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="nombre" th:text="#{persona.nombre}"></label></div>
+		<div class="col-md-6">
+			<input type="text" id="nombre" name="nombre" th:value="${persona.nombre}"/>
+			<p th:if="${#fields.hasErrors('nombre')}" class="error">
+				<span th:if="${#fields.hasErrors('nombre', 'notEmpty')}" th:text="#{persona.titulo.notEmpty}"></span>
+				<span th:if="${#fields.hasErrors('nombre', 'size')}" th:text="#{persona.titulo.size}"></span>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="apellido1" th:text="#{persona.apellido1}"></label></div>
+		<div class="col-md-6">
+			<input type="text" id="apellido1" name="apellido1" th:value="${persona.apellido1}"/>
+			<p th:if="${#fields.hasErrors('apellido1')}" class="error">
+				<span th:if="${#fields.hasErrors('apellido1', 'size')}" th:text="#{persona.apellido1.size}"></span>
+			</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-6"><label for="apellido2" th:text="#{persona.apellido2}"></label></div>
+		<div class="col-md-6">
+			<input type="text" id="apellido2" name="apellido2" th:value="${persona.apellido2}"/>
+			<p th:if="${#fields.hasErrors('apellido2')}" class="error">
+				<span th:if="${#fields.hasErrors('apellido2', 'size')}" th:text="#{persona.apellido2.size}"></span>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="ciudad" th:text="#{pelicula.ciudad}"></label></div>
+		<div class="col-md-6">
+			<input type="text" id="ciudad" name="ciudad" th:value="${pelicula.ciudad}"/>
+			<p th:if="${#fields.hasErrors('ciudad')}" class="error">
+				<span th:if="${#fields.hasErrors('ciudad', 'size')}" th:text="#{pelicula.ciudad.size}"></span>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="direccion" th:text="#{pelicula.direccion}"></label></div>
+		<div class="col-md-6">
+			<input type="text" id="direccion" name="direccion" th:value="${pelicula.direccion}"/>
+			<p th:if="${#fields.hasErrors('direccion')}" class="error">
+				<span th:if="${#fields.hasErrors('direccion', 'size')}" th:text="#{pelicula.direccion.size}"></span>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="telefono" th:text="#{pelicula.telefono}"></label></div>
+		<div class="col-md-6">
+			<input type="text" id="telefono" name="telefono" th:value="${pelicula.telefono}"/>
+			<p th:if="${#fields.hasErrors('telefono')}" class="error">
+				<span th:if="${#fields.hasErrors('telefono', 'size')}" th:text="#{pelicula.telefono.size}"></span>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="fechaLanzamiento" th:text="#{persona.fechaLanzamiento}"></label></div>
+		<div class="col-md-6">
+			<input type="date" id="fechaLanzamiento" name="fechaLanzamiento" th:field="${persona.fecha_nacimiento}"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6"><label for="id_tipo" th:text="#{persona.tipo}"></label></div>
+		<div class="col-md-6">
+			<select type="text" id="id_tipo" name="id_tipo" th:field="${persona.id_tipo}">
+				<option th:each="tipo : ${listaTipos}" th:value="${tipo.id}" th:text="${tipo.nombre}"></option>
+			</select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6"><input type="submit" th:value="#{btn.guardar}"/></div>
+		<div class="col-md-6">
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
